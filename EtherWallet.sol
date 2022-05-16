@@ -1,14 +1,18 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity >=0.7.0 <0.9.0;
 
-contract EtherWalletA {
+contract EtherWallet {
     address payable public owner;
 
     constructor() {
         owner = payable(msg.sender);
     }
 
-    receive() external payable {}
+    // receive() external payable {}
+
+    function deposit() external payable {
+        
+    }
 
     function withdraw(uint _amount) external {
         require(msg.sender == owner, "caller is not owner");
